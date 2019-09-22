@@ -2,7 +2,7 @@
   <div>
     <h1>Todo App</h1>
     <div v-bind:key="todo.id" v-for="todo in todos">
-      <TodoItem v-bind:todo="todo" />
+      <TodoItem v-bind:todo="todo" v-on:remove-todo="$emit('remove-todo', todo.id)" />
     </div>
   </div>
 </template>
