@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <AddTodo />
+    <AddTodo v-on:add-todo="addTodo" />
     <Todos v-bind:todos="todos" v-on:remove-todo="removeTodo" />
   </div>
 </template>
@@ -19,33 +19,15 @@ export default {
   },
   data() {
     return {
-      todos: [
-        {
-          id: 1,
-          title: "Laundry",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Dishes",
-          completed: false
-        },
-        {
-          id: 3,
-          title: "Vacuuming",
-          completed: false
-        },
-        {
-          id: 4,
-          title: "Groceries",
-          completed: true
-        }
-      ]
+      todos: []
     };
   },
   methods: {
     removeTodo(id) {
       this.todos = this.todos.filter(todo => todo.id != id);
+    },
+    addTodo(todo) {
+      this.todos = [...this.todos, todo];
     }
   }
 };
