@@ -1,14 +1,17 @@
 <template>
   <div id="app">
+    <Header />
     <Todos v-bind:todos="todos" v-on:remove-todo="removeTodo" />
   </div>
 </template>
 
 <script>
-import Todos from "./components/Todos";
+import Header from "./components/layout/Header.vue";
+import Todos from "./components/Todos.vue";
 export default {
   name: "app",
   components: {
+    Header,
     Todos
   },
   data() {
@@ -53,7 +56,6 @@ export default {
 }
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
