@@ -1,7 +1,6 @@
 <template>
-  <div v-bind:todo="todo">
-    <h3>{{todo.title}}</h3>
-    <div>{{todo.completed}}</div>
+  <div class="todo-item" v-bind:class="{'is-completed':todo.completed}">
+    <h4>{{todo.title}}</h4>
   </div>
 </template>
 
@@ -13,4 +12,9 @@ export default {
 </script>
 
 <style scoped>
+.todo-item {
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
+}
 </style>
