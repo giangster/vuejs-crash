@@ -12,7 +12,7 @@ export default {
         {
           id: 1,
           title: "Laundry",
-          completed: true
+          completed: false
         },
         {
           id: 2,
