@@ -17,4 +17,8 @@ export default {
   padding: 10px;
   border-bottom: 1px #ccc dotted;
 }
+
+.is-completed {
+  text-decoration: line-through;
+}
 </style>
