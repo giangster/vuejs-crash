@@ -27,5 +27,8 @@ export default {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #ffffff;
   text-align: center;
+  margin-bottom: 20px;
+  height: 80px;
+  padding: 15px;
 }
 </style>
