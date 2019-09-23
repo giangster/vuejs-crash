@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link class="navigation" to="/">Home</router-link>
+      <router-link class="navigation" to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -34,5 +34,15 @@ body {
 
 .button:hover {
   background: #666;
+}
+
+#nav {
+  text-align: center;
+  margin: 15px;
+  justify-content: space-between;
+}
+.navigation {
+  text-decoration: none;
+  margin-left: 30px;
 }
 </style>
