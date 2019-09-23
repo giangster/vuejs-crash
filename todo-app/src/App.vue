@@ -1,54 +1,12 @@
 <template>
   <div id="app">
-    <Header />
-    <AddTodo v-on:add-todo="addTodo" />
-    <Todos v-bind:todos="todos" v-on:remove-todo="removeTodo" />
+    <div id="nav">
+      <router-link class="navigation" to="/">Home</router-link>
+      <router-link class="navigation" to="/about">About</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
-
-<script>
-import axios from "axios";
-import Header from "./components/layout/Header";
-import AddTodo from "./components/AddTodo";
-import Todos from "./components/Todos";
-export default {
-  name: "app",
-  components: {
-    Header,
-    AddTodo,
-    Todos
-  },
-  data() {
-    return {
-      todos: []
-    };
-  },
-  methods: {
-    removeTodo(id) {
-      axios
-        .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-        .then(res => (this.todos = this.todos.filter(todo => todo.id != id)))
-        .catch(err => console.log(err));
-    },
-    addTodo(newTodo) {
-      const { title, completed } = newTodo;
-      axios
-        .post("https://jsonplaceholder.typicode.com/todos", {
-          title,
-          completed
-        })
-        .then(res => (this.todos = [...this.todos, res.data]))
-        .catch(err => console.log(err));
-    }
-  },
-  created() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos")
-      .then(res => (this.todos = res.data))
-      .catch(err => console.log(err));
-  }
-};
-</script>
 
 <style>
 * {
@@ -76,5 +34,15 @@ body {
 
 .button:hover {
   background: #666;
+}
+
+#nav {
+  text-align: center;
+  margin: 15px;
+  justify-content: space-between;
+}
+.navigation {
+  text-decoration: none;
+  margin-left: 30px;
 }
 </style>
