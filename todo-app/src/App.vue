@@ -60,7 +60,6 @@ export default {
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #2c3e50;
-  text-align: center;
   width: 80%;
   margin: auto;
   font-size: 20px;
